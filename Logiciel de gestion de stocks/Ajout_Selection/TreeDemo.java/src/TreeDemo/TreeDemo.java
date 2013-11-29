@@ -18,6 +18,9 @@ import java.net.URL;
 import java.io.IOException;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
 
 public class TreeDemo extends JPanel
                       implements TreeSelectionListener {
@@ -57,6 +60,75 @@ public class TreeDemo extends JPanel
 
         // Crée le panneau défilant et y ajoute l'arbre 
         JScrollPane treeView = new JScrollPane(tree);
+        
+        
+        
+        JButton addProduct = new JButton("  Creer un nouveau produit  ");
+		JButton addCategory = new JButton("Creer une nouvelle categorie");
+		JButton deleteCategory = new JButton("Supprimer categorie ou produit");
+		JButton modifyProduct = new JButton("    Modifier un produit    ");
+		JButton modifyTree = new JButton("    Deplacer une categorie    ");
+		JButton renameCategorie = new JButton("Renommer categorie ou produit");
+		
+		
+		// ******************* Actions Listener  ****************************
+		// Boutton "Creer un nouveau produit"
+		addProduct.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent event){               
+				
+                            Formulaire fenetre1 = new Formulaire();
+                            
+			}
+		});
+		
+		// Boutton "Creer une nouvelle categorie"
+		/*
+		 * A compléter
+		 */
+		
+		
+		// Boutton "Supprimer categorie ou produi"		
+		/*
+		 * A completer
+		 */
+		
+		
+		// Boutton "Modifier un produit"
+		/*
+		 * A completer
+		 */
+		
+		// Boutton "Deplacer une categorie"
+		/*
+		 * A completer
+		 */
+		
+		// Boutton "Renommer categorie ou produit"
+		/*
+		 * A completer
+		 */
+		
+		
+		
+		// *******************   Arrangement des bouttons ************************
+		JPanel buttonZone = new JPanel();
+		/*GridLayout south = new GridLayout();
+		south.setColumns(3);
+		south.setRows(2);
+		south.setHgap(5);
+		south.setVgap(5);
+                */
+		
+		//buttonZone.setLayout(south);
+		buttonZone.add(addProduct);
+		buttonZone.add(addCategory);
+		buttonZone.add(deleteCategory);
+		buttonZone.add(modifyProduct);
+		buttonZone.add(modifyTree);
+		buttonZone.add(renameCategorie);
+		buttonZone.setVisible(true);
+		
+                add(buttonZone);
 
       
 

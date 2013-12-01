@@ -8,6 +8,10 @@ public class Category {
 	String name;
 	List<Category> children;
 	
+	 // Liste des instances des la classe categorie
+	 // Variable de classe
+        private static ArrayList<Category> instances = new ArrayList<Category>();
+	
 	public Category(String n){
 		this.name = n;
 		children = new LinkedList<Category>();
@@ -45,4 +49,29 @@ public class Category {
 			}
 		}
 	}
+	
+	
+	/*
+	* Methode de classe
+	* Methode permettant de renvoyer une categorie parmi les categories deja cree a partir du nom de la 
+	* categorie de recher
+	* parametre en entree : String (nom de la categorie qu'on cherche)
+	*/
+	public static Category getLookedCategory(String nom){
+        	Category cat = new Category("");
+        	boolean equals=false;
+        	
+        	for (Category cat1 : instances){
+        		
+        		if (cat1.getName().equals(nom)){
+        			cat=cat1;
+        		}
+        	}        
+        	
+        	return cat;
+        }
+
+		public static ArrayList<Category> getInstances() {
+			return instances;
+		}
 }
